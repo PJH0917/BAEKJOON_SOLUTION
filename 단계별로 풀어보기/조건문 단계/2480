@@ -1,0 +1,21 @@
+#include <stdio.h>
+#define max(a,b)((a)>(b)?(a):(b))
+int main() {
+    int A, B, C, R;
+    scanf("%d %d %d", &A, &B, &C);
+    if (A == B && B == C) {
+        R = 10000 + A * 1000;
+    }
+    else if (A == B || A == C) {
+        R = 1000 + A * 100;
+    }
+    else if (B == C) {
+        R = 1000 + B * 100;
+    }
+    else{
+        R = max(max(A, B), C) * 100;
+    }
+    printf("%d", R);
+    return 0;
+    
+}
