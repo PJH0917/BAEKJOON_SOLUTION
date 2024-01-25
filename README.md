@@ -1,2 +1,2 @@
 # BAEKJOON_SOLUTION
-Personal solution for BAEKJOON
+내가 푼 풀이 올리는 곳
