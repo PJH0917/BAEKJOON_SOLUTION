@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main() {
+	int A, B,B_initial,B_second,B_last;
+	
+
+	scanf("%d %d",&A,&B);
+	 B_initial=B/100;
+	 B_second = (B%100)/10;
+	 B_last = (B-B_initial*100-B_second*10);
+	 printf("%d\n",A*B_last);
+	 printf("%d\n", A * B_second);
+	 printf("%d\n", A * B_initial);
+	 printf("%d\n",A*B);
+	 return 0;
+
+
+}
