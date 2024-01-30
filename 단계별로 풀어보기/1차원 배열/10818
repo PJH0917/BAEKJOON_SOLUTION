@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	int N,MAX= -1000000,MIN=1000000;
+	scanf("%d",&N);
+	int* arr = (int*)malloc(N * sizeof(int));
+	for (int i = 0; i < N; i++) {
+		scanf("%d", &arr[i]);
+		if (arr[i] >= MAX) {
+			MAX = arr[i];
+		}
+		if (arr[i] <= MIN) {
+			MIN = arr[i];
+		}
+	}
+	printf("%d %d", MIN, MAX);
+	free(arr);
+}
