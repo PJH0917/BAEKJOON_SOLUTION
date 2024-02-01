@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	int N, M, i, j, k, arr[101];
+
+	scanf("%d %d", &N, &M);
+	for (int z = 1; z <= N; z++) {
+		arr[z] = z;
+	}
+	for (int t = 0; t < M; t++) {
+		scanf("%d %d", &i, &j);
+		k = arr[i];
+		arr[i] = arr[j];
+		arr[j] = k;
+	}
+	for (int t = 1; t <= N; t++) {
+		printf("%d ",arr[t]);
+	}
+
+}
