@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+	int N, M, i, j, k, arr[101] = { 0 };//arr[101]={0, }이 c언어 상에서는 권장사항이라고 합니다.(참고 바람)
+	scanf("%d %d", &N, &M);
+	for (int t = 0; t < M; t++) {
+		scanf("%d %d %d", &i, &j, &k);
+		for (int q = i; q <= j; q++) {
+			arr[q] = k;
+		}
+	}
+	for (int t = 1; t <= N; t++) {
+		printf("%d ",arr[t]);
+	}
+
+}
