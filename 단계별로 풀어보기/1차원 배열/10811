@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+	int N, M, i, j, arr[100], temp;
+
+	for (int z = 0; z < 100; z++) {
+		arr[z] = z + 1;
+	}
+
+	scanf("%d %d", &N, &M);
+
+	for (int k = 1; k <= M; k++) {
+		scanf("%d %d", &i, &j);
+
+		for (int z = i - 1, y = j - 1; z < y; z++, y--) { 
+			temp = arr[z];
+			arr[z] = arr[y];
+			arr[y] = temp;
+		}
+	}
+	for (int d = 0; d < N; d++) {
+		printf("%d ", arr[d]);
+	}
+}
