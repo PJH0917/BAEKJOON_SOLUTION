@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+	int N, Max = -1;
+	double  arr[1000];
+	double sum = 0;
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++) {
+		scanf("%lf", &arr[i]);
+		if (Max < arr[i]) {
+			Max = arr[i];
+		}
+
+	}
+	for (int i = 0; i < N; i++) {
+		arr[i] = arr[i] / Max * 100;
+		sum += arr[i];
+	}
+	
+	printf("%lf", sum/N);
+
+	return 0;
+}
