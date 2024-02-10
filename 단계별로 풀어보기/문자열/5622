@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+	char WORD[15];
+	scanf("%s", WORD);
+	int time = 0;
+	for (int i = 0; i < strlen(WORD); i++) {
+		if (WORD[i] >= 'A' && WORD[i] <= 'C') {
+			time += 3;
+		}
+		if (WORD[i] >= 'D' && WORD[i] <= 'F') {
+			time += 4;
+		}
+		if (WORD[i] >= 'G' && WORD[i] <= 'I') {
+			time += 5;
+		}
+		if (WORD[i] >= 'J' && WORD[i] <= 'L') {
+			time += 6;
+		}
+		if (WORD[i] >= 'M' && WORD[i] <= 'O') {
+			time += 7;
+		}
+		if (WORD[i] >= 'P' && WORD[i] <= 'S') {
+			time += 8;
+		}
+		if (WORD[i] >= 'T' && WORD[i] <= 'V') {
+			time += 9;
+		}
+		if (WORD[i] >= 'W' && WORD[i] <= 'Z') {
+			time += 10;
+		}	
+	}
+	printf("%d", time);
+}
