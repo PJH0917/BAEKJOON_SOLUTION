@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+	char word[100000];
+	char abc[26] = {0};
+	int max = 0;
+	char result;
+	scanf("%s", &word);
+	for (int i = 0; i < strlen(word); i++) {
+		if (word[i] >= 'a') {
+			abc[word[i] - 'a']++;
+		}
+		else abc[word[i] - 'A']++;
+	}
+	for (int k = 0; k < strlen(abc); k++) {
+		if (abc[k] > max) {
+			max = abc[k];
+			result = 'A' + k;
+		}
+		else if (abc[k] == max) {
+			result = '?';
+		}		
+	}
+	printf("%c", result);
+	return 0;
+}
