@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+bool isGroupWord(char* word) {
+    int length = strlen(word);
+    bool visited[26] = { false }; 
+
+    for (int i = 0; i < length; i++) {
+    
+        if (i > 0 && word[i] != word[i - 1]) {
+            
+            if (visited[word[i] - 'a']) {
+                return false; 
+            }
+            visited[word[i - 1] - 'a'] = true; 
+        }
+    }
+    return true; 
+}
+
+int main() {
+    int N;
+    scanf("%d", &N);
+    int count = 0;
+    char word[101]; 
+    for (int i = 0; i < N; i++) {
+        scanf("%s", word);
+        if (isGroupWord(word)) {
+            count++;
+        }
+    }
+    printf("%d", count);
+    return 0;
+}
