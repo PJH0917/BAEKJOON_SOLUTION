@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+int base_to_decimal(char N[], int B) {
+    int decimal = 0;
+    int length = strlen(N);
+    for (int i = 0; i < length; i++) {
+        int digit_value;
+        if ('0' <= N[i] && N[i] <= '9') {
+            digit_value = N[i] - '0';
+        }
+        else {
+            digit_value = N[i] - 'A' + 10;
+        }
+        decimal += digit_value * pow(B, length - i - 1);
+    }
+    return decimal;
+}
+
+int main() {
+    char N[100];
+    int B;
+    scanf("%s %d", N, &B);
+
+    printf("%d\n", base_to_decimal(N, B));
+
+    return 0;
+}
