@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+void decimal_to_base(int decimal, int B, char result[]) {
+    int index = 0;
+    while (decimal > 0) {
+        int remainder = decimal % B;
+        char digit;
+        if (remainder < 10) {
+            digit = remainder + '0';
+        }
+        else {
+            digit = remainder - 10 + 'A';
+        }
+        result[index++] = digit;
+        decimal /= B;
+    }
+    result[index] = '\0';  
+    int i, j;
+    char temp;
+    for (i = 0, j = index - 1; i < j; i++, j--) {
+        temp = result[i];
+        result[i] = result[j];
+        result[j] = temp;
+    }
+}
+int main() {
+    int N, B;
+    char result[100];
+    scanf("%d %d", &N, &B);
+    decimal_to_base(N, B, result);
+    printf("%s\n", result);
+    return 0;
+}
